@@ -26,14 +26,5 @@ RUN apt-get update && apt-get install -y \
 RUN pip install pelican==3.4.0 ipython==2.3.0 Markdown==2.4.0
 
 # We should expose our pelican site to the container
-# docker run -P -v /home/mortenvp/dev/mortenvp-pelican /mortenvp-pelican
-WORKDIR /mortenvp-pelican
-
-# The pelican command `make devserver` will monitor the source files and
-# automatically reload when files change. An internal webserver is started
-# on http://localhost:8000 so can expose this port outside the container.
-EXPOSE 8000:8000
-
-# The tail part is just needed to make sure that the process "hangs" inside
-# the container
-CMD make devserver && tail -F pelican.pid
+# docker run -v /home/mortenvp/dev/mortenvp-pelican /pelican
+WORKDIR /pelican
