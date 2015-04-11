@@ -1,3 +1,7 @@
+# Build using:
+#
+#    docker build -t mortenvp/mortenvp-docker .
+
 FROM ubuntu:14.10
 
 MAINTAINER Morten V. Pedersen <morten@mortenvp.com>
